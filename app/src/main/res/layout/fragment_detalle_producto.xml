@@ -47,7 +47,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/ivProduct"
-                android:text="TextoName"
+                android:text="TextoNombre"
                 style="@style/NormalText"
                 android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
@@ -123,9 +123,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
             <Button
+                android:id="@+id/btMap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/ubicacion"
+                app:layout_constraintTop_toBottomOf="@id/tvPresentations"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+            <Button
                 android:id="@+id/btOrder"
                 android:text="@string/ordenar"
-                app:layout_constraintTop_toBottomOf="@id/tvPresentations"
+                app:layout_constraintTop_toBottomOf="@id/btMap"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="10dp"

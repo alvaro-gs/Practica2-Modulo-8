@@ -97,7 +97,6 @@
     <string name="eliminacionFallida">Ocurrió un error, favor de reintentar</string>
 
 
-
     <!--Catálogo-->
 
     <string name="detalleProducto">Detalle del producto</string>
@@ -113,5 +112,8 @@
     <string name="categoria4">Galletas</string>
     <string name="categoria5">Otros</string>
     <string name="errorConexion">Error de conexión</string>
+    <string name="ubicacion">Ver ubicaicón</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

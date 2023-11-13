@@ -12,7 +12,11 @@ data class DetalleProductoDto(
     @SerializedName("type_id")
     var categoryId: Long ? = 0,
     @SerializedName("presentations")
-    var presentations : List<Presentations>? = null
+    var presentations : List<Presentations>? = null,
+    @SerializedName("latitud")
+    var latitud : Double? = 0.0,
+    @SerializedName("longitud")
+    var longitud : Double? = 0.0
 
 )
 

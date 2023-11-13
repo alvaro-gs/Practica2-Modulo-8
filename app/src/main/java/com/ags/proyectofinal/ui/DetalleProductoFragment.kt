@@ -1,5 +1,6 @@
 package com.ags.proyectofinal.ui
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -69,6 +70,7 @@ class DetalleProductoFragment : Fragment() {
         binding.tvPresentationsTitle.visibility = View.VISIBLE
         binding.tvPresentations.visibility = View.VISIBLE
         binding.btOrder.visibility = View.VISIBLE
+        binding.btMap.visibility = View.VISIBLE
 
         lifecycleScope.launch {
             productoId?.let { id ->
@@ -110,6 +112,28 @@ class DetalleProductoFragment : Fragment() {
                             }
 
                             tvPresentations.text = textoPresentation
+
+                            btMap.setOnClickListener {
+                                 val bundle = Bundle().apply {
+                                     response.body()?.latitud?.let { latitud ->
+                                         putDouble("latitud",
+                                             latitud
+                                         )
+                                     }
+                                     response.body()?.longitud?.let { longitud ->
+                                         putDouble("longitud",
+                                             longitud
+                                         )
+                                     }
+                                     putString("nombre",response.body()?.name)
+                                     putString("categoria",category)
+                                 }
+                                val intent = Intent(requireContext(),MapActivity::class.java).apply {
+                                    putExtra("KEY_INFO", "DatosMapa")
+                                    putExtra("EXTRA_BUNDLE", bundle)
+                                }
+                                startActivity(intent)
+                            }
                         }
                     }
 
@@ -126,6 +150,7 @@ class DetalleProductoFragment : Fragment() {
                         binding.tvPresentationsTitle.visibility = View.GONE
                         binding.tvPresentations.visibility = View.GONE
                         binding.btOrder.visibility = View.GONE
+                        binding.btMap.visibility = View.GONE
 
                         binding.btReload.setOnClickListener {
                             load()
