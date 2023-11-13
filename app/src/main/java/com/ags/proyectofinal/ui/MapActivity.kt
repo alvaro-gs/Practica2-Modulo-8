@@ -50,7 +50,7 @@ class MapActivity : AppCompatActivity(),OnMapReadyCallback {
         map.setOnMapLongClickListener { position ->
             val marker = MarkerOptions()
                 .position(position)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.person))
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.cake))
             map.addMarker(marker)
         }
     }
@@ -60,7 +60,7 @@ class MapActivity : AppCompatActivity(),OnMapReadyCallback {
             .position(coordinates)
             .title(nombre)
             .snippet(categoria)
-            .icon(BitmapDescriptorFactory.fromResource(R.drawable.delivery))
+            .icon(BitmapDescriptorFactory.fromResource(R.drawable.cake))
 
         map.addMarker(marker)
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(coordinates, 18f))
